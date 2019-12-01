@@ -1,0 +1,293 @@
+<html class=" overthrow-enabled" style="background-color:transparent;">
+    
+    
+    <head>
+        <meta charset="utf-8">
+        <title>IDH</title>
+        <meta http-equiv="Content-Security-Policy" content="
+              default-src 'self' gap://ready; 
+              style-src 'self' 'unsafe-inline'; 
+              script-src 'self' 'unsafe-inline'; 
+              img-src 'self'; 
+              font-src 'self' data: ">
+
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"> 
+        <meta name="theme-color" content="#273052">
+             
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" sizes="180x180" href="assets/images/parker-android-desktop.png">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#3372DF">
+
+        <link rel="shortcut icon" href="assets/images/180x180.png">
+        
+        <!-- build:css css/styles.min.css-->
+       
+        <link rel="stylesheet" type="text/css" href="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" />
+        <link rel="stylesheet" type="text/css" href="../node_modules/@fortawesome/fontawesome-free/css/all.css" />
+
+        <link rel="stylesheet" type="text/css" href="../node_modules/swiper/css/swiper.css">
+        <link rel="stylesheet" type="text/css" href="./css/mobile-angular-ui-base.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/modals.css" />
+        <link rel="stylesheet" type="text/css" href="./css/catalog-panel.css" />
+        
+      
+        <!-- endbuild -->
+        
+
+        <style type="text/css">
+            /**
+             * Hide when Angular is not yet loaded and initialized
+             */
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak,.ng-hide:not(.ng-hide-animate){ display:none !important;}
+            ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute; }
+        </style>
+               
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <!--<script
+            src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../nowy/digest-hud.js"></script>-->
+          
+    </head>
+    
+<body id="IDH_BODY"  ng-controller="mainPanelController" style="transform: translate3d(0px, 0px, 0px);">
+
+   
+
+    <div class="idh-main-content" >
+              
+      <!-- App Body -->
+          
+        <ng-view class="idh-ngview-content" ></ng-view>
+      
+      <!-- ~ .app -->
+    </div>
+    
+    
+    
+    <div ng-show="loading" class="idh-loading idh-flex-center-center">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+    
+    <noscript style="color: white;">Your browser does not support JavaScript!</noscript>
+    <script>   
+            
+            document.addEventListener("deviceready", function(){
+                
+                console.log(device);
+                //document.write('<link href="css/ionic.android.app.css"  rel="stylesheet">');
+                
+                //platform specific classes for ios wrong contaier height fix
+
+                
+
+
+                //soft keyboard over inputs in android fix
+                if(device.platform.toLowerCase() === "android"){
+				
+                    StatusBar.hide();
+					screen.orientation.lock('portrait');
+                    //navigator.splashscreen.hide();
+                    
+                    // Is this plugin supported?
+                    AndroidFullScreen.isSupported(function(){
+                        console.log('AndroidFullScreen.isSupported');
+                        // Extend your app underneath the status bar (Android 4.4+ only)
+                        AndroidFullScreen.showUnderStatusBar(function(){}, function(error){ console.error(error); });
+
+                        // Extend your app underneath the system UI (Android 4.4+ only)
+                        AndroidFullScreen.showUnderSystemUI(function(){}, function(error){ console.error(error); });
+
+                        // Hide system UI and keep it hidden (Android 4.4+ only)
+                        AndroidFullScreen.immersiveMode(function(){}, function(error){ console.error(error); });
+                           
+                    }, function(error){
+                        console.error(error);
+                    });      
+                }
+                
+                //if (device.platform.toLowerCase() !== 'browser'){
+                //    screen.orientation.lock('portrait');
+                //}
+                
+                /* FRAMEWORK SCRIPT LIST START */
+                var framework = [
+                    "../node_modules/angular/angular.js",
+                    "../node_modules/angular-deferred-bootstrap/angular-deferred-bootstrap.js",
+                    "../node_modules/angular-route/angular-route.js",
+                    "../node_modules/hammerjs/hammer.js",
+                    "../node_modules/angular-hammer/angular.hammer.js",
+                    "../node_modules/swiper/js/swiper.js",
+                    
+                    "../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js",
+                    "../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js",
+                    
+                    "../node_modules/angular-ui-bootstrap/template/modal/backdrop.html.js",
+                    "../node_modules/angular-ui-bootstrap/template/modal/window.html.js",
+                    
+                    
+                    
+                                 
+                    //"../node_modules/EaselJS/lib/easeljs.js"
+                ];
+                /* FRAMEWORK SCRIPT LIST END */
+                
+                /* MINOR_PLUGINS SCRIPT LIST START */
+                var minor_plugins = [
+                    "../node_modules/lodash/lodash.js"
+                ];
+                /* MINOR_PLUGINS SCRIPT LIST END */
+                
+                /* IDH SCRIPT LIST START */
+                var idh = [
+                    
+                    "./scripts/app.js",
+                    "./scripts/app.routes.js",
+                    "./scripts/config/app.config.js",
+                    "./scripts/app.run.js",
+                    
+                    "./scripts/directives/app.directive.js",
+                    
+                    
+                    
+                    "./scripts/services/modalService.js",
+
+                    "./scripts/controllers/mainPanelController.js",
+                    
+                    "./scripts/controllers/catalogController.js",
+                    
+                    
+                    
+                    
+                    "./scripts/controllers/modalControllers/showUsersModalController.js"
+                    
+
+                ];
+                /* IDH SCRIPT LIST END */
+                
+                
+                
+                var scriptLoader = function(){
+                    return new Promise(function(resolve, reject) {
+
+                        var scriptArray = framework.concat(minor_plugins, idh);
+                        console.log('\n... Loading angular scripts ...\n\n');
+
+                        function injectScript(src) {
+                            return new Promise(function(res, rej) {
+                                var script = document.createElement('script');
+                                script.async = true;
+                                script.src = src;
+                                script.addEventListener('load', res);
+                                script.addEventListener('error', function(){rej('Error loading script.');});
+                                script.addEventListener('abort', function(){rej('Script loading aborted.');});
+                                document.head.appendChild(script);
+                            });
+                        }
+
+                        var serialScriptLoad = function(){
+                                console.log('Loading '+scriptArray[0]);
+                                injectScript(scriptArray[0])
+                            .then(function() {
+                                scriptArray.shift();
+                                if (scriptArray.length > 0 ){
+                                    serialScriptLoad();
+                                }else{
+                                    console.log('\n... All scripts loaded ...\n\n');
+                                    resolve();
+                                }
+                            }).catch(function(error){
+                                console.log(error);
+                                reject(error);
+                            });
+
+                        };
+
+                        serialScriptLoad();
+                    });
+                };
+                
+                var totalRecal = function(){
+                    navigator.app.exitApp();
+                };
+                
+                var testChain = function(){
+                    return new Promise(function(resolve, reject) {
+                                               
+                        resolve();
+
+                    });
+                };
+                
+                var initPromiseChain = function(){
+                    return new Promise(function(resolve, reject) {
+                        resolve();
+                    });
+                };
+
+                
+                
+                
+                initPromiseChain()
+                .then(testChain,totalRecal)
+                .then(scriptLoader,totalRecal)
+                .then(function(){
+
+                    deferredBootstrapper.bootstrap({
+                        element: document,
+                        module: 'IDH',
+                        resolve: {
+                            APP_CONFIG: ['$http', '$q', '$timeout', function ($http, $q, $timeout) {
+                                var d = $q.defer();
+                                $http({
+                                    method: 'GET',
+                                    url: 'cnf/cnf.json'
+                                }).then(function (local_cnf_response) {
+                                    console.log(local_cnf_response.data);
+                                    d.resolve(local_cnf_response.data);
+                                }, function(reject) {
+                                    d.reject('Could not load local cnf json');
+                                });
+                                return d.promise;
+                            }]
+                        },
+                        onError: function (error) {
+                              console.log('Could not bootstrap, error: ' + error);
+                        }
+                    });
+            
+                }, function(){
+                    console.log('end');
+                });
+ 
+            }, false);
+    </script>
+
+    <span id="scri" style="display: none;"></span>
+ 
+  </body>
+
+
+
+
+
+
+
+
+    
+</html>

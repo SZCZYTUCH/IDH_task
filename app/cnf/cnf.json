@@ -1,0 +1,77 @@
+{
+    "users": [
+        {
+            "name": "Basia Sołtysińska",
+            "status": "Founder",
+            "location": "Warsaw",
+            "img_url": "Warstwa6881X.png",
+            "sorting_position": 0
+        },
+        {
+            "name": "Włas Chorowiec",
+            "status": "Founder",
+            "location": "Warsaw",
+            "img_url": "Warstwa10731X.png",
+            "sorting_position": 1
+        },
+        {
+            "name": "Edyta Leśniewska",
+            "status": "Head of Human Resources",
+            "location": "Warsaw",
+            "img_url": "Warstwa10741X.png",
+            "sorting_position": 2
+        },
+        {
+            "name": "Joanna Pawluk",
+            "status": "Chief Growth Officer (CGO)",
+            "location": "London",
+            "img_url": "Warstwa10751X.png",
+            "sorting_position": 3
+        },
+        {
+            "name": "David Saunders",
+            "status": "Business Development",
+            "location": "London",
+            "img_url": "Warstwa10761X.png",
+            "sorting_position": 4
+        },
+        {
+            "name": "Adam Eldridge",
+            "status": "Business Development Director US",
+            "location": "Los Angeles",
+            "img_url": "Warstwa6881X.png",
+            "sorting_position": 5
+        },
+        {
+            "name": "Maha Mahda",
+            "status": "Chief Business  Development Officer (CBDO)",
+            "location": "Warsaw",
+            "img_url": "Warstwa10731X.png",
+            "sorting_position": 6
+        },
+        {
+            "name": "Elżbieta Kamińska",
+            "status": "International Client Service Manager",
+            "location": "Warsaw",
+            "img_url": "Warstwa10741X.png",
+            "sorting_position": 7
+        },
+        {
+            "name": "Karolina Makuch",
+            "status": "Creation Manager",
+            "location": "Warsaw",
+            "img_url": "Warstwa10751X.png",
+            "sorting_position": 8
+        },
+        {
+            "name": "Kamil Bolek",
+            "status": "Head of Communication",
+            "location": "Warsaw",
+            "img_url": "Warstwa10761X.png",
+            "sorting_position": 9
+        }
+        
+
+
+    ]
+}

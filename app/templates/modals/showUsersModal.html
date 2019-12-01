@@ -1,0 +1,23 @@
+<div class="idh-modal idh-flex-center-center">
+    <div class="idh-modal-content">
+        <div class="idh-modal-header">
+            <i class="fas fa-times fa-7x" style="color:white;" ng-click="cancel()"></i>
+        </div>
+        <div class="idh-modal-main-row">
+            <!-- Swiper -->
+            <div class="swiper-container" >
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" ng-repeat="member in membersData| orderBy: 'sorting_position' " on-finish-render="ngRepeatFinished">
+                        <div class="idh-modal-show-box">
+                            <div>{{member.status}}</div>
+                            <div>{{member.name}}</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Arrows -->
+                <div class="idh-swiper-button swiper-button-next"></div>
+                <div class="idh-swiper-button swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+</div>

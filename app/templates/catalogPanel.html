@@ -1,0 +1,22 @@
+<div style="width: 100%; display: flex; flex-direction: column;" ng-controller="catalogController">
+    
+   <div class="idh-catalog-header">Meet our team</div>
+   
+   <div class="idh-member-list">
+       <div class="idh-member idh-member-col-sm-5 idh-member-col-md-5 idh-member-col-lg-5 idh-member-col-xl-5" 
+            ng-repeat="member in membersData| orderBy: 'sorting_position' "
+            ng-click="openMemberModal(member)"
+            >
+           
+           <div class="idh-member-awatar" ng-style="setBackgrundAvatar(member.img_url)">
+               <div class="idh-coverup"></div>
+               <div class="idh-mail-icon idh-flex-center-center"><i class="fas fa-envelope"></i></div>
+           </div>
+           <div class="idh-member-name">{{member.name}}</div>
+           <div class="idh-member-status">{{member.status}}</div>
+           <div class="idh-member-location">{{member.location}}</div>
+       </div>
+   </div>
+
+
+</div>
