@@ -14,5 +14,7 @@ localhost:8083/app/index.html
 
 Minify with command:
 >gulp compile
+
 or
+
 >gulp compile --release
